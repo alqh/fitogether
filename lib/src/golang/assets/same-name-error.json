@@ -1,0 +1,12 @@
+{"Time":"2024-03-23T14:15:55.189391+13:00","Action":"run","Package":"fitogether/golang/assets/samples","Test":"TestAllFail"}
+{"Time":"2024-03-23T14:15:55.189395+13:00","Action":"output","Package":"fitogether/golang/assets/samples","Test":"TestAllFail","Output":"=== RUN   TestAllFail\n"}
+{"Time":"2024-03-23T14:15:55.189399+13:00","Action":"run","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@test/three/b"}
+{"Time":"2024-03-23T14:15:55.189402+13:00","Action":"output","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@test/three/b","Output":"=== RUN   TestAllFail/Bad_@test/three/b\n"}
+{"Time":"2024-03-23T14:15:55.189406+13:00","Action":"output","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@test/three/b","Output":"--- FAIL: TestAllFail/Bad_@test/three/b (0.00s)\n"}
+{"Time":"2024-03-23T14:15:55.18941+13:00","Action":"fail","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@test/three/b","Elapsed":0}
+{"Time":"2024-03-23T14:15:55.189414+13:00","Action":"run","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@second-test"}
+{"Time":"2024-03-23T14:15:55.189417+13:00","Action":"output","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@second-test","Output":"=== RUN   TestAllFail/Bad_@second-test\n"}
+{"Time":"2024-03-23T14:15:55.18944+13:00","Action":"output","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@second-test","Output":"--- FAIL: TestAllFail/Bad_@second-test (0.00s)\n"}
+{"Time":"2024-03-23T14:15:55.189443+13:00","Action":"fail","Package":"fitogether/golang/assets/samples","Test":"TestAllFail/Bad_@second-test","Elapsed":0}
+{"Time":"2024-03-23T14:15:55.189446+13:00","Action":"output","Package":"fitogether/golang/assets/samples","Test":"TestAllFail","Output":"--- FAIL: TestAllFail (0.00s)\n"}
+{"Time":"2024-03-23T14:15:55.189449+13:00","Action":"fail","Package":"fitogether/golang/assets/samples","Test":"TestAllFail","Elapsed":0}

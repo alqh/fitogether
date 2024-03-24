@@ -1,0 +1,55 @@
+package samples
+
+import "testing"
+
+func TestAllPass(t *testing.T) {
+	t.Run("Pass good test @test/two", func(t *testing.T) {
+	})
+
+	t.Run("Pass @good test @tests/one", func(t *testing.T) {
+	})
+
+	t.Run("Pass @third good test", func(t *testing.T) {
+	})
+}
+
+func TestAllFail(t *testing.T) {
+	t.Run("Bad @test/three/b", func(t *testing.T) {
+		t.Fail()
+	})
+
+	t.Run("Badder @second-test", func(t *testing.T) {
+		t.Fail()
+	})
+}
+
+func TestAllSkipped(t *testing.T) {
+	t.Run("Skipped @test/four/b", func(t *testing.T) {
+		t.SkipNow()
+	})
+
+	t.Run("Skipped @third-test", func(t *testing.T) {
+		t.SkipNow()
+	})
+}
+
+func TestSomeFailed(t *testing.T) {
+	t.Run("Good @test/five/b", func(t *testing.T) {
+	})
+
+	t.Run("Bad @third-test/b2", func(t *testing.T) {
+		t.Fail()
+	})
+
+	t.Run("Good @third-test/b3", func(t *testing.T) {
+	})
+}
+
+func TestSomeSkipped(t *testing.T) {
+	t.Run("Skipped @test/six/b", func(t *testing.T) {
+		t.SkipNow()
+	})
+
+	t.Run("Good @third-test/b4", func(t *testing.T) {
+	})
+}
