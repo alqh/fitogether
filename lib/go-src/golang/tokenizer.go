@@ -10,10 +10,10 @@ type testNameToken struct {
 	FitExpectation string
 }
 
-// goLangTestOutputTokenizer is a utility to help tokenize golang test output and extract the metadata based on the convention set by fitogether.
+// goLangTestOutputTokenizer is a utility to help tokenize golang tests output and extract the metadata based on the convention set by fitogether.
 type goLangTestOutputTokenizer struct{}
 
-// TokenizeTest tokenizes the Go test name to extract metadata from the test name.
+// TokenizeTest tokenizes the Go tests name to extract metadata from the tests name.
 func (t goLangTestOutputTokenizer) TokenizeTest(test string) testNameToken {
 	fitExIdx := t.indexOfFitExpectationStart(test)
 

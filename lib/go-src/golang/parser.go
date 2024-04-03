@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"fitogether/types/parser"
+	"fitogether/types/types_parser"
 )
 
 const (
@@ -28,7 +28,7 @@ type GolangFitTestResult struct {
 	testName       string
 	fitExpectation string
 	packageName    string
-	testResult     parser.TestResultState
+	testResult     types_parser.TestResultState
 	ranAt          time.Time
 }
 
@@ -48,7 +48,7 @@ func (g GolangFitTestResult) FitExpectation() string {
 	return g.fitExpectation
 }
 
-func (g GolangFitTestResult) TestResult() parser.TestResultState {
+func (g GolangFitTestResult) TestResult() types_parser.TestResultState {
 	return g.testResult
 }
 
@@ -66,7 +66,7 @@ type GoLangParser struct {
 	tokenizer goLangTestOutputTokenizer
 }
 
-func (p GoLangParser) ExtractFitTest(testOutputPath string) ([]parser.FitTestResult, error) {
+func (p GoLangParser) ExtractFitTest(testOutputPath string) ([]types_parser.FitTestResult, error) {
 	file, err := os.Open(testOutputPath)
 	if err != nil {
 		return nil, newParserFileOpenError(testOutputPath, err)
@@ -78,8 +78,8 @@ func (p GoLangParser) ExtractFitTest(testOutputPath string) ([]parser.FitTestRes
 		}
 	}(file)
 
-	seenTests := make(map[string]parser.FitTestResult, 50)
-	res := make([]parser.FitTestResult, 0, 50)
+	seenTests := make(map[string]types_parser.FitTestResult, 50)
+	res := make([]types_parser.FitTestResult, 0, 50)
 
 	scanner := bufio.NewScanner(file)
 	// Read the file line by line
@@ -107,7 +107,7 @@ func (p GoLangParser) ExtractFitTest(testOutputPath string) ([]parser.FitTestRes
 	return res, nil
 }
 
-// processTestOutput processes a single line of test output.
+// processTestOutput processes a single line of tests output.
 // It returns error if an error occurs during processing.
 func (p GoLangParser) processTestOutput(testResultLine string) (*GolangFitTestResult, error) {
 	testResultOutput := golangTestOutput{}
@@ -123,13 +123,13 @@ func (p GoLangParser) processTestOutput(testResultLine string) (*GolangFitTestRe
 
 	switch testResultOutput.Action {
 	case golangTestActionPass:
-		r.testResult = parser.TestResultState_PASS
+		r.testResult = types_parser.TestResultState_PASS
 	case golangTestActionFail:
-		r.testResult = parser.TestResultState_FAIL
+		r.testResult = types_parser.TestResultState_FAIL
 	case golangTestActionSkip:
-		r.testResult = parser.TestResultState_SKIP
+		r.testResult = types_parser.TestResultState_SKIP
 	default:
-		return nil, nil // not relevant test output, skip.
+		return nil, nil // not relevant tests output, skip.
 	}
 
 	tokens := p.tokenizer.TokenizeTest(testResultOutput.TestName)

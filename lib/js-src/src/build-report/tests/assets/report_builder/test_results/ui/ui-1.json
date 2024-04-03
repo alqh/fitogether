@@ -1,0 +1,20 @@
+[
+  {
+    "test_name": "Should show todo item by date its added",
+    "test_path": "ui-micro-1",
+    "fit_expectation": "item/add/a3",
+    "ran_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "test_name": "Should add todo item successfully",
+    "test_path": "ui-micro-1",
+    "fit_expectation": "item/add/a1",
+    "ran_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "test_name": "Should add tag to todo item successfully",
+    "test_path": "ui-micro-1",
+    "fit_expectation": "item/meta/add-tag/a1",
+    "ran_at": "2024-01-01T00:00:00Z"
+  }
+]
