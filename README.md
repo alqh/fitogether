@@ -10,7 +10,7 @@ Multiple stakeholders (technical and non-technical) collaborate together to prod
 
 The cFit Document feeds into the process of developing the running software. Each part of the document sets an expectation of how the software should behave, like an acceptance criteria, which is then translated into one or more tests written as part of the UI or service's test. Typically a UI or a service has different granularity of tests (testing pyramid), therefore, the one expectation could encompass a few unit tests, a few component tests and an integration test.
 
-All the tests results then feeds back up and collated to indicate if the expectation in the Fit Document has been met or not.
+All the tests results then feeds back up and collated to indicate if the expectation in the cFit Document has been met or not.
 
 A cFit report should show:
 
