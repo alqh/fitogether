@@ -58,7 +58,7 @@ In this case, the cFit validation result may be ambiguous as it may read like th
 
 ## G3 Provide feedback of the test result for cFit expectations
 
-For each Go test that is tagged as relevant to validate a cFit expectation, the test result provides a feedback on if the state of validation.
+For each Go test that is tagged as relevant to validate a cFit expectation, the test result provides a feedback on the state of validation.
 
 | Expectation Case | Go Test Result | cFit Validation State |
 |------------------|----------------|-----------------------|
