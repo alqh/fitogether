@@ -1,4 +1,4 @@
-package parser
+package types_parser
 
 const (
 	FILE_NOT_FOUND_CODE   = 404

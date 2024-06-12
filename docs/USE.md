@@ -5,7 +5,7 @@
 ### Unit
 Each cFit document should represent a unit of software.
 
-Each unit has expectations of how it behave, and can include interactions with other units in order to deliver the functionality that it owns.
+Each unit has expectations of how it behaves, and can include interactions with other units in order to deliver the functionality that it owns.
 
 This unit is documented in a single markdown file.
 

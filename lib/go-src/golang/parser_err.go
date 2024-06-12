@@ -1,6 +1,6 @@
 package golang
 
-import "fitogether/types/parser"
+import "fitogether/types/types_parser"
 
 func newParserSameFitNameError(extractedTestName string, rawTestNames []string) ParserSameFitNameError {
 	return ParserSameFitNameError{
@@ -9,18 +9,18 @@ func newParserSameFitNameError(extractedTestName string, rawTestNames []string) 
 	}
 }
 
-// ParserSameFitNameError is an error that occurs when multiple Go tests have the same extracted test name (minus cFit tag).
+// ParserSameFitNameError is an error that occurs when multiple Go tests have the same extracted tests name (minus cFit tag).
 type ParserSameFitNameError struct {
 	testName      string
 	matchingTests []string
 }
 
 func (g ParserSameFitNameError) Error() string {
-	return "Multiple Go tests have same test name"
+	return "Multiple Go tests have same tests name"
 }
 
 func (g ParserSameFitNameError) Code() int {
-	return parser.GENERIC_EXTRACT_ERROR
+	return types_parser.GENERIC_EXTRACT_ERROR
 }
 
 func newParserFileOpenError(filePath string, err error) ParserFileOpenError {
@@ -30,7 +30,7 @@ func newParserFileOpenError(filePath string, err error) ParserFileOpenError {
 	}
 }
 
-// ParserFileOpenError is an error that occurs when the parser cannot open the test output file.
+// ParserFileOpenError is an error that occurs when the parser cannot open the tests output file.
 type ParserFileOpenError struct {
 	filePath   string
 	wrappedErr error
@@ -44,7 +44,7 @@ func (p ParserFileOpenError) Error() string {
 }
 
 func (p ParserFileOpenError) Code() int {
-	return parser.FILE_NOT_FOUND_CODE
+	return types_parser.FILE_NOT_FOUND_CODE
 }
 
 func newParserExtractTestOutputError(err error) ParserExtractTestOutputError {
@@ -59,11 +59,11 @@ type ParserExtractTestOutputError struct {
 
 func (p ParserExtractTestOutputError) Error() string {
 	if p.wrappedErr == nil {
-		return "Failed to extract test output"
+		return "Failed to extract tests output"
 	}
-	return "Failed to extract test output: " + p.wrappedErr.Error()
+	return "Failed to extract tests output: " + p.wrappedErr.Error()
 }
 
 func (p ParserExtractTestOutputError) Code() int {
-	return parser.FILE_NOT_FOUND_CODE
+	return types_parser.FILE_NOT_FOUND_CODE
 }

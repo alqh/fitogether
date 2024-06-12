@@ -156,10 +156,6 @@ Then, the cFit report should show:
 
 In a cFit document, a cFit expectation can be specified using in a table as a permutation.
 
-In order for the table to be considered a cFit expectation, the first column of the header of the table must be "Expectation Case".
-
-The first column row value is the cFit expectation code that forms the URI of the cFit expectation.
-
 For example, if a cFit expectation is:
 
 ```markdown

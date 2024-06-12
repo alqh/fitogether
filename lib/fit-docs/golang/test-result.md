@@ -46,11 +46,11 @@ For example:
 
 ```go
 func TestSameName(t *testing.T) {
-	// Extracted test name is TestSameName/My_test, cFit: a/b
-	t.Run("My test @a/b", func(t *testing.T) {})
+	// Extracted tests name is TestSameName/My_test, cFit: a/b
+	t.Run("My tests @a/b", func(t *testing.T) {})
 	
-	// Extracted test name is TestSameName/My_test, cFit: c/d
-	t.Run("My test @c/d", func(t *testing.T) {})
+	// Extracted tests name is TestSameName/My_test, cFit: c/d
+	t.Run("My tests @c/d", func(t *testing.T) {})
 }
 ```
 
